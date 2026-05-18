@@ -10,6 +10,12 @@ output/*
 !output/volunteer-agent-ownership-guide.pdf
 !output/volunteer-agent-ownership-guide.html
 
+# Personal assets (photos, CV — keep locally only)
+assets/photos/*
+assets/cv/*
+!assets/photos/.gitkeep
+!assets/cv/.gitkeep
+
 # Node
 node_modules/
 npm-debug.log*

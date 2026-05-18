@@ -66,7 +66,7 @@ node facebook-scan.mjs --dry-run  ← preview sem escrever ficheiros
 | Diz `pipeline` | **pipeline** — processa URLs pendentes em `data/pipeline.md` |
 | Diz `contacts` ou `tracker` | **contacts** — mostra histórico de contatos enviados |
 | Diz `message` + URL/texto | **message** — gera só a mensagem (oportunidade já analisada) |
-| Diz `apply` ou `candidatar` + oportunidade | **apply** — gera PDF, preenche formulário, regista no tracker (ver `modes/apply.md`) |
+| Diz `apply` ou `candidatar` + oportunidade | **apply** — preenche formulário, anexa ficheiros se pedido, regista no tracker (ver `modes/apply.md`) |
 | Diz `enrich` ou `enriquecer perfil` | **enrich** — rastreia Gmail + web para enriquecer o perfil (ver `modes/enrich-profile.md`) |
 
 ## Modo SCAN — como funciona

@@ -25,14 +25,10 @@ Antes de abrir qualquer formulário, gerar:
    - References
    - Questions for the host
 
-3. **Gerar PDF** da carta de apresentação:
-   - Ler `templates/volunteer-letter.html`
-   - Substituir todos os `{{VARS}}` com conteúdo personalizado
-   - Salvar HTML em `output/letter-{slug}-{data}.html`
-   - Correr `node generate-volunteer-pdf.mjs output/letter-{slug}-{data}.html`
-   - PDF fica em `output/letter-{slug}-{data}.pdf`
+3. **Gerar PDF da carta apenas se o formulário pedir** um ficheiro de apresentação/CV/cover letter para upload. Não gerar por defeito.
+   - Se pedido: ler `templates/volunteer-letter.html`, substituir `{{VARS}}`, salvar HTML, correr `node generate-volunteer-pdf.mjs`, PDF fica em `output/letter-{slug}-{data}.pdf`
 
-4. Mostrar ao utilizador o rascunho completo (mensagem + PDF gerado)
+4. Mostrar ao utilizador o rascunho completo da mensagem
 5. **PARAR** — só avançar para o formulário depois da aprovação do utilizador
 
 ---
@@ -89,10 +85,26 @@ Para cada campo:
 | "References" | CouchSurfing: @castroser · LinkedIn |
 | "Message to host" | Mensagem completa gerada |
 
-**Ao fazer upload de ficheiro (CV/carta em PDF):**
+**Ao encontrar campos de upload de ficheiro:**
+
+| O formulário pede | O que fazer |
+|---|---|
+| Carta de apresentação / Cover letter / CV (PDF) | Gerar PDF com `generate-volunteer-pdf.mjs` → `browser_file_upload` |
+| Foto de perfil / Profile photo | Ver pasta `assets/photos/` — se tiver foto, usar. Se não, pedir ao utilizador ou indicar que pode usar `assets/photos/profile.jpg` |
+| Qualquer outro documento | Perguntar ao utilizador o caminho do ficheiro antes de avançar |
+
+**Pasta de assets do utilizador:**
 ```
-browser_file_upload → selector do campo → caminho do PDF gerado
+volunteer-agent/
+  assets/
+    photos/        ← fotos de perfil para upload em formulários
+      profile.jpg  ← foto principal recomendada
+    cv/            ← CV em PDF se necessário (pouco comum em voluntariados)
 ```
+Se a pasta `assets/` não existir e o formulário pedir foto, avisar o utilizador:
+> "O formulário pede uma foto de perfil. Crie a pasta `assets/photos/` e coloque lá a sua foto como `profile.jpg`, ou indique o caminho."
+
+**Não tentar encontrar fotos automaticamente via web** — usar apenas o que o utilizador colocou explicitamente em `assets/photos/`.
 
 ---
 
