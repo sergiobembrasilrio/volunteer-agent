@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{VOLUNTEER_NAME}} — {{PROJECT_NAME}}</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: #2c2c2c;
+    background: #ffffff;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 36px 48px 24px;
+    border-bottom: 1px solid #f0ece6;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .name-block h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a2e2b;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .name-block .tagline {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #2E7D6B;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .header-accent {
+    height: 3px;
+    background: linear-gradient(to right, #2E7D6B, #C4623B);
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: 10px;
+    color: #666;
+  }
+
+  .contact-row a {
+    color: #2E7D6B;
+    text-decoration: none;
+  }
+
+  .contact-row .dot {
+    color: #ccc;
+  }
+
+  /* ── META ── */
+  .meta {
+    padding: 20px 48px;
+    border-bottom: 1px solid #f0ece6;
+  }
+
+  .meta-grid {
+    display: flex;
+    gap: 40px;
+    font-size: 10.5px;
+    color: #555;
+  }
+
+  .meta-item strong {
+    display: block;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 2px;
+  }
+
+  /* ── BODY ── */
+  .letter-body {
+    padding: 28px 48px 32px;
+  }
+
+  .salutation {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #1a2e2b;
+    margin-bottom: 20px;
+  }
+
+  .letter-body p {
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: #2c2c2c;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+
+  .letter-body .section-intro {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #2E7D6B;
+    margin: 22px 0 14px;
+    padding-left: 14px;
+    border-left: 3px solid #2E7D6B;
+    line-height: 1.5;
+  }
+
+  /* ── SKILLS BLOCK ── */
+  .skills-block {
+    background: #f7f5f1;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+
+  .skills-block .skills-title {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    background: #ffffff;
+    border: 1px solid #e0dbd4;
+    border-radius: 3px;
+    padding: 3px 9px;
+    font-size: 10px;
+    color: #444;
+    font-weight: 500;
+  }
+
+  /* ── AVAILABILITY ── */
+  .availability-box {
+    display: flex;
+    gap: 24px;
+    background: #f0f9f6;
+    border-left: 3px solid #2E7D6B;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 18px 0;
+  }
+
+  .availability-item strong {
+    display: block;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #2E7D6B;
+    margin-bottom: 2px;
+  }
+
+  .availability-item span {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1a2e2b;
+  }
+
+  /* ── REFERENCES ── */
+  .references-block {
+    border-top: 1px solid #f0ece6;
+    padding-top: 14px;
+    margin-top: 20px;
+  }
+
+  .references-block .ref-title {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .ref-item {
+    font-size: 10.5px;
+    color: #555;
+    margin-bottom: 4px;
+  }
+
+  .ref-item a {
+    color: #2E7D6B;
+    text-decoration: none;
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 24px;
+    font-size: 11.5px;
+    color: #2c2c2c;
+  }
+
+  .closing .sign-off {
+    margin-bottom: 20px;
+  }
+
+  .closing .signature {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a2e2b;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 12px 48px;
+    border-top: 1px solid #f0ece6;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    color: #bbb;
+  }
+
+  @media print {
+    body { font-size: 11px; }
+    .page { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>{{VOLUNTEER_NAME}}</h1>
+        <div class="tagline">Volunteer &amp; Work Exchange</div>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+    <div class="contact-row">
+      <span>{{VOLUNTEER_EMAIL}}</span>
+      <span class="dot">·</span>
+      <a href="{{VOLUNTEER_COUCHSURFING}}">CouchSurfing: @castroser</a>
+      <span class="dot">·</span>
+      <a href="{{VOLUNTEER_LINKEDIN}}">LinkedIn</a>
+      <span class="dot">·</span>
+      <a href="{{VOLUNTEER_INSTAGRAM}}">Instagram: @castro.ser</a>
+    </div>
+  </div>
+
+  <!-- META -->
+  <div class="meta">
+    <div class="meta-grid">
+      <div class="meta-item">
+        <strong>Para / To</strong>
+        {{HOST_NAME}} — {{PROJECT_NAME}}
+      </div>
+      <div class="meta-item">
+        <strong>Localização / Location</strong>
+        {{PROJECT_LOCATION}}
+      </div>
+      <div class="meta-item">
+        <strong>Data / Date</strong>
+        {{DATE}}
+      </div>
+    </div>
+  </div>
+
+  <!-- LETTER BODY -->
+  <div class="letter-body">
+
+    <div class="salutation">{{SALUTATION}}</div>
+
+    <!-- PERSONAL INTRO -->
+    <p>{{PERSONAL_INTRO}}</p>
+
+    <!-- WHY THIS PROJECT -->
+    <div class="section-intro">{{WHY_THIS_PROJECT_QUOTE}}</div>
+    <p>{{WHY_THIS_PROJECT}}</p>
+
+    <!-- WHAT I OFFER -->
+    <p>{{WHAT_I_OFFER_INTRO}}</p>
+
+    <div class="skills-block">
+      <div class="skills-title">{{SKILLS_LABEL}}</div>
+      <div class="skills-list">
+        {{SKILLS_TAGS}}
+      </div>
+    </div>
+
+    <!-- AVAILABILITY -->
+    <div class="availability-box">
+      <div class="availability-item">
+        <strong>{{AVAILABLE_FROM_LABEL}}</strong>
+        <span>{{AVAILABILITY_FROM}}</span>
+      </div>
+      <div class="availability-item">
+        <strong>{{AVAILABLE_UNTIL_LABEL}}</strong>
+        <span>{{AVAILABILITY_TO}}</span>
+      </div>
+      <div class="availability-item">
+        <strong>{{DURATION_LABEL}}</strong>
+        <span>{{AVAILABILITY_DURATION}}</span>
+      </div>
+    </div>
+
+    <!-- QUESTION / CURIOSITY -->
+    <p>{{QUESTION_FOR_HOST}}</p>
+
+    <!-- REFERENCES -->
+    <div class="references-block">
+      <div class="ref-title">{{REFERENCES_LABEL}}</div>
+      {{REFERENCES_ITEMS}}
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <p class="sign-off">{{CLOSING}}</p>
+      <div class="signature">{{VOLUNTEER_NAME}}</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>{{VOLUNTEER_NAME}} · Volunteer Application · {{DATE}}</span>
+    <span>{{PROJECT_NAME}} · {{PROJECT_LOCATION}}</span>
+  </div>
+
+</div>
+</body>
+</html>

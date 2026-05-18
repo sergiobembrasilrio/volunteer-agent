@@ -1,0 +1,493 @@
+# Volunteer-Ops — Portais de Busca
+# ─────────────────────────────────────────────────────────────────
+# CONFIGURAÇÃO DO UTILIZADOR
+# Define quais regiões incluir no scan.
+# true  = vasculhar nesta sessão
+# false = ignorar (economiza tokens)
+#
+# Uso:
+#   scan             → usa esta config (só regiões marcadas true)
+#   scan eu          → força scan só Europa Schengen
+#   scan balkans     → força scan só Balcãs / Europa Leste
+#   scan asia        → força scan só Sudeste Asiático
+#   scan japan       → força scan só Japão
+#   scan all         → ignora config, varre tudo
+# ─────────────────────────────────────────────────────────────────
+
+active_regions:
+  europe_schengen: true        # Itália, Espanha, Portugal, França, Grécia, Alemanha, etc.
+  europe_east_balkans: false   # Bulgária, Sérvia, Bósnia, Montenegro, Albânia, Macedónia, Kosovo
+  europe_caucasus: false       # Geórgia, Arménia, Azerbaijão
+  europe_other: false          # Reino Unido, Irlanda, Noruega, Islândia
+  asia_southeast: false        # Tailândia, Indonésia, Vietnã, Camboja, Filipinas, Malásia
+  asia_east: false             # Japão, Coreia do Sul, Taiwan
+  asia_south: false            # India, Nepal, Sri Lanka
+  americas_central: false      # Costa Rica, Guatemala, México, Panamá
+  americas_south: false        # Brasil, Argentina, Chile, Peru, Colômbia
+  americas_north: false        # EUA, Canadá
+  africa_north: false          # Marrocos, Tunísia, Egipto
+  africa_sub_saharan: false    # Quénia, Tanzânia, África do Sul, Uganda
+  oceania: false               # Austrália, Nova Zelândia, Fiji
+  middle_east: false           # Turquia, Jordânia, Israel
+
+# ─────────────────────────────────────────────────────────────────
+# PORTAIS — por região
+# ─────────────────────────────────────────────────────────────────
+
+portais:
+
+  # ── EUROPA SCHENGEN ──────────────────────────────────────────
+  europe_schengen:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Itália",   url: "https://www.volunteersbase.com/europe/italy",       nota: "Prioridade — agriturismo, vendemmia, hostels" }
+        - { country: "Espanha",  url: "https://www.volunteersbase.com/europe/spain" }
+        - { country: "Portugal", url: "https://www.volunteersbase.com/europe/portugal",    nota: "PT nativo — fit cultural máximo" }
+        - { country: "França",   url: "https://www.volunteersbase.com/europe/france" }
+        - { country: "Grécia",   url: "https://www.volunteersbase.com/europe/greece" }
+        - { country: "Croácia",  url: "https://www.volunteersbase.com/europe/croatia" }
+        - { country: "Alemanha", url: "https://www.volunteersbase.com/europe/germany" }
+        - { country: "Áustria",  url: "https://www.volunteersbase.com/europe/austria" }
+        - { country: "Holanda",  url: "https://www.volunteersbase.com/europe/netherlands" }
+        - { country: "Bélgica",  url: "https://www.volunteersbase.com/europe/belgium" }
+
+    - portal: HelpStay
+      nota: "Absorveu HippoHelp (jan 2025) — 2500+ listings globais, gratuito para contactar"
+      urls:
+        - { region: "Europa",    url: "https://helpstay.com/europe" }
+        - { country: "Itália",   url: "https://helpstay.com/italy" }
+        - { country: "Espanha",  url: "https://helpstay.com/spain" }
+        - { country: "Portugal", url: "https://helpstay.com/portugal" }
+
+    - portal: HopperJobs
+      nota: "Gratuito, boa cobertura europeia, mix de hostels/fazendas/eco"
+      urls:
+        - { region: "Europa",    url: "https://www.hopperjobs.com/search?region=europe" }
+
+    - portal: HelpX
+      nota: "$20 por 2 anos — permite enviar mensagens activas. Vale para Europa."
+      urls:
+        - { region: "Europa",    url: "https://www.helpx.net/list.asp?continent=Europe" }
+
+    - portal: Free Volunteering
+      nota: "100% gratuito — curado, foco em hostels e fazendas"
+      urls:
+        - { country: "Itália",   url: "https://freevolunteering.net/volunteer-italy/" }
+        - { country: "Espanha",  url: "https://freevolunteering.net/volunteer-spain/" }
+        - { country: "Portugal", url: "https://freevolunteering.net/volunteer-portugal/" }
+        - { region: "Europa",    url: "https://freevolunteering.net/volunteer-europe/" }
+
+    - portal: Grassroots Volunteering
+      nota: "Gratuito, não-comercial, curado à mão — alta qualidade, sem spam"
+      urls:
+        - { region: "Europa",    url: "https://grassrootsvolunteering.org/volunteer-location/europe/" }
+
+    - portal: NuMundo
+      nota: "Ecovilas e permacultura — projetos sérios"
+      urls:
+        - { region: "Europa",    url: "https://www.numundo.org/opportunities?region=europe" }
+
+    - portal: GEN (Global Ecovillage Network)
+      nota: "Rede oficial de ecovilas — contato directo, sem intermediário"
+      urls:
+        - { region: "GEN Europa", url: "https://gen-europe.org/communities/" }
+
+    - portal: Ecobasa
+      nota: "Foco Europa — projetos sustentáveis que aceitam viajantes"
+      urls:
+        - { region: "Europa",    url: "https://ecobasa.org" }
+
+    - portal: Idealist
+      nota: "ONGs e projetos sociais — gratuito, 200k+ orgs"
+      urls:
+        - { region: "Europa",    url: "https://www.idealist.org/en/volunteer?locationWithin=Europe" }
+
+  # ── EUROPA LESTE / BALCÃS ────────────────────────────────────
+  europe_east_balkans:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Bulgária",      url: "https://www.volunteersbase.com/europe/bulgaria",              nota: "Bansko — ski resort, hostel temporada inverno" }
+        - { country: "Sérvia",        url: "https://www.volunteersbase.com/europe/serbia",                nota: "Kopaonik — maior ski resort dos Balcãs" }
+        - { country: "Bósnia",        url: "https://www.volunteersbase.com/europe/bosnia-and-herzegovina", nota: "Jahorina/Sarajevo — resort olímpico 1984" }
+        - { country: "Montenegro",    url: "https://www.volunteersbase.com/europe/montenegro",            nota: "Kolašin — ski boutique" }
+        - { country: "Albânia",       url: "https://www.volunteersbase.com/europe/albania" }
+        - { country: "Macedónia",     url: "https://www.volunteersbase.com/europe/macedonia" }
+        - { country: "Kosovo",        url: "https://www.volunteersbase.com/europe/kosovo" }
+        - { country: "Roménia",       url: "https://www.volunteersbase.com/europe/romania" }
+        - { country: "Polónia",       url: "https://www.volunteersbase.com/europe/poland" }
+
+    - portal: HelpStay
+      urls:
+        - { region: "Europa Leste",   url: "https://helpstay.com/eastern-europe" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { region: "Europa Leste",   url: "https://grassrootsvolunteering.org/volunteer-location/europe/" }
+
+    - portal: CVS-Bulgaria (Workcamps)
+      url: "https://cvs-bg.org"
+      nota: "Workcamps búlgaros — gratuito, alojamento incluído, experiência cultural profunda. Perfeito para Bansko/Sofia."
+
+    - portal: SEEYN (South East European Youth Network)
+      url: "https://seeyn.org"
+      nota: "Coordenador de workcamps nos Balcãs — Sérvia, Bósnia, Macedónia, Kosovo, Montenegro"
+
+    - portal: Concordia Volunteers
+      url: "https://concordia.fr/en/volunteer-abroad/"
+      nota: "Workcamps França + Europa Leste — gratuito, projetos comunitários e culturais"
+
+    - portal: Mladiinfo (Macedónia/Balcãs)
+      url: "https://mladiinfo.eu"
+      nota: "Youth volunteering, EVS/ESC, workcamps em toda a região dos Balcãs"
+
+  # ── CÁUCASO ──────────────────────────────────────────────────
+  europe_caucasus:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Geórgia",  url: "https://www.volunteersbase.com/asia/georgia",  nota: "DESTAQUE: 365 dias sem visto p/ brasileiros, Gudauri ski, Tbilisi hostel" }
+        - { country: "Arménia",  url: "https://www.volunteersbase.com/asia/armenia" }
+
+    - portal: HelpStay
+      urls:
+        - { country: "Geórgia",  url: "https://helpstay.com/georgia" }
+
+  # ── REINO UNIDO / IRLANDA / ESCANDINÁVIA ─────────────────────
+  europe_other:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Reino Unido", url: "https://www.volunteersbase.com/europe/united-kingdom" }
+        - { country: "Irlanda",     url: "https://www.volunteersbase.com/europe/ireland" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { country: "Reino Unido", url: "https://grassrootsvolunteering.org/volunteer-location/uk-ireland/" }
+
+  # ── SUDESTE ASIÁTICO ─────────────────────────────────────────
+  asia_southeast:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Tailândia",  url: "https://www.volunteersbase.com/asia/thailand" }
+        - { country: "Indonésia",  url: "https://www.volunteersbase.com/asia/indonesia",  nota: "Bali fora do circuito turístico" }
+        - { country: "Vietnã",     url: "https://www.volunteersbase.com/asia/vietnam" }
+        - { country: "Camboja",    url: "https://www.volunteersbase.com/asia/cambodia" }
+        - { country: "Filipinas",  url: "https://www.volunteersbase.com/asia/philippines" }
+        - { country: "Malásia",    url: "https://www.volunteersbase.com/asia/malaysia" }
+
+    - portal: HelpStay
+      urls:
+        - { region: "Sudeste Asiático", url: "https://helpstay.com/southeast-asia" }
+
+    - portal: HopperJobs
+      urls:
+        - { region: "Ásia",        url: "https://www.hopperjobs.com/search?region=asia" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { region: "Sudeste Asiático", url: "https://grassrootsvolunteering.org/volunteer-location/southeast-asia/" }
+
+  # ── JAPÃO / ÁSIA ORIENTAL ────────────────────────────────────
+  asia_east:
+
+    - portal: Volunteers Base
+      nota: "PRIORIDADE MÁXIMA"
+      urls:
+        - { country: "Japão",         url: "https://www.volunteersbase.com/asia/japan" }
+        - { country: "Coreia do Sul",  url: "https://www.volunteersbase.com/asia/south-korea" }
+
+    - portal: WWOOF Japan
+      nota: "Pago ~JPY 5500/ano — vale especificamente para o Japão, fazendas verificadas. URL corrigido."
+      urls:
+        - { country: "Japão",  url: "https://wwoofjapan.com" }
+
+    - portal: HOPE / Hands On Tokyo
+      url: "https://www.handsontokyo.org"
+      nota: "Tokyo-area volunteer matching, English-friendly, gratuito, hostel e comunidade"
+
+    - portal: Volunteer Japan Portal
+      url: "https://www.volunteer-japan.com"
+      nota: "Diretório geral de voluntariados no Japão, EN/JP, inclui rurais e urbanos"
+
+    - portal: Nippon Foundation
+      url: "https://www.nippon-foundation.or.jp/en/what/projects/volunteer/"
+      nota: "Grande ONG japonesa — múltiplos programas de voluntariado comunitário"
+
+    - portal: HelpStay
+      urls:
+        - { country: "Japão",  url: "https://helpstay.com/japan" }
+
+    - portal: HopperJobs
+      urls:
+        - { country: "Japão",  url: "https://www.hopperjobs.com/search?country=japan" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { region: "Ásia Oriental", url: "https://grassrootsvolunteering.org/volunteer-location/east-asia/" }
+
+  # ── ÁSIA DO SUL ──────────────────────────────────────────────
+  asia_south:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Índia",     url: "https://www.volunteersbase.com/asia/india" }
+        - { country: "Nepal",     url: "https://www.volunteersbase.com/asia/nepal" }
+        - { country: "Sri Lanka", url: "https://www.volunteersbase.com/asia/sri-lanka" }
+
+  # ── AMÉRICAS CENTRAL ─────────────────────────────────────────
+  americas_central:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Costa Rica",  url: "https://www.volunteersbase.com/americas/costa-rica" }
+        - { country: "Guatemala",   url: "https://www.volunteersbase.com/americas/guatemala" }
+        - { country: "México",      url: "https://www.volunteersbase.com/americas/mexico" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { region: "América Central", url: "https://grassrootsvolunteering.org/volunteer-location/central-america/" }
+
+  # ── AMÉRICAS DO SUL ──────────────────────────────────────────
+  americas_south:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Brasil",     url: "https://www.volunteersbase.com/americas/brazil" }
+        - { country: "Argentina",  url: "https://www.volunteersbase.com/americas/argentina" }
+        - { country: "Peru",       url: "https://www.volunteersbase.com/americas/peru" }
+        - { country: "Colômbia",   url: "https://www.volunteersbase.com/americas/colombia" }
+
+    - portal: NuMundo
+      nota: "Forte em América Latina — ecovilas, permacultura"
+      urls:
+        - { region: "América do Sul", url: "https://www.numundo.org/opportunities?region=south-america" }
+
+  # ── ÁFRICA DO NORTE ──────────────────────────────────────────
+  africa_north:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Marrocos", url: "https://www.volunteersbase.com/africa/morocco" }
+        - { country: "Egipto",   url: "https://www.volunteersbase.com/africa/egypt" }
+        - { country: "Tunísia",  url: "https://www.volunteersbase.com/africa/tunisia" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { region: "África do Norte", url: "https://grassrootsvolunteering.org/volunteer-location/north-africa/" }
+
+  # ── ÁFRICA SUB-SAHARIANA ─────────────────────────────────────
+  africa_sub_saharan:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Quénia",      url: "https://www.volunteersbase.com/africa/kenya" }
+        - { country: "Tanzânia",    url: "https://www.volunteersbase.com/africa/tanzania" }
+        - { country: "África do Sul", url: "https://www.volunteersbase.com/africa/south-africa" }
+
+    - portal: HelpStay
+      urls:
+        - { region: "África",       url: "https://helpstay.com/africa" }
+
+    - portal: Grassroots Volunteering
+      urls:
+        - { region: "África",       url: "https://grassrootsvolunteering.org/volunteer-location/africa/" }
+
+  # ── OCEÂNIA ──────────────────────────────────────────────────
+  oceania:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Austrália",      url: "https://www.volunteersbase.com/oceania/australia" }
+        - { country: "Nova Zelândia",  url: "https://www.volunteersbase.com/oceania/new-zealand" }
+
+    - portal: HelpStay
+      urls:
+        - { region: "Oceânia",  url: "https://helpstay.com/oceania" }
+
+  # ── MÉDIO ORIENTE ────────────────────────────────────────────
+  middle_east:
+
+    - portal: Volunteers Base
+      urls:
+        - { country: "Turquia",  url: "https://www.volunteersbase.com/europe/turkey" }
+        - { country: "Jordânia", url: "https://www.volunteersbase.com/middle-east/jordan" }
+
+# ─────────────────────────────────────────────────────────────────
+# PORTAIS GLOBAIS — vasculhar em qualquer scan (independente da região)
+# ─────────────────────────────────────────────────────────────────
+global_always:
+
+  - portal: Free Volunteering (global)
+    url: "https://freevolunteering.net"
+    nota: "Lista global, gratuito — algumas oportunidades podem redirecionar para pagos"
+
+  - portal: Permaculture Global
+    url: "https://www.permacultureglobal.org/projects"
+    nota: "Mapa global de projetos — muitos aceitam voluntários"
+
+  - portal: IC.org (Foundation for Intentional Community)
+    url: "https://www.ic.org/directory/"
+    nota: "Diretório de comunidades intencionais — ecovilas, cooperativas"
+
+  - portal: Permaculture Research Institute (PRI) Network
+    url: "https://permacultureresearchinstitute.org/volunteer/"
+    nota: "Rede global de sítios certificados PRI — permacultura, agrofloresta, muitos aceitam voluntários"
+
+  - portal: Eurotopia (Europa — comunidades intencionais)
+    url: "https://eurotopia.de/en/"
+    nota: "Diretório Europeu de ecovilas e comunidades — bom para Schengen + Balcãs"
+
+  - portal: Diggers & Dreamers (UK + Europa)
+    url: "https://www.diggersanddreamers.org.uk"
+    nota: "Comunidades intencionais UK e Europa — housing coop, ecovilas, farms"
+
+  - portal: Trustroots
+    url: "https://www.trustroots.org"
+    nota: "Alternativa ao CouchSurfing, nonprofit, forte em viajantes e voluntários nômades — rede de confiança útil para referências"
+
+  - portal: BeWelcome
+    url: "https://www.bewelcome.org"
+    nota: "Alternativa open source ao CouchSurfing — menor mas activo, boas referências de anfitrião"
+
+# ─────────────────────────────────────────────────────────────────
+# ONGs / PROJETOS SOCIAIS — diretórios e redes de ONGs com voluntários
+# ─────────────────────────────────────────────────────────────────
+ongs_and_ngos:
+
+  global:
+    - portal: Idealist
+      url: "https://www.idealist.org/en/volunteer"
+      nota: "200k+ ONGs globais, gratuito — filtrar por localização e tipo"
+
+    - portal: ReliefWeb (Humanitarian)
+      url: "https://reliefweb.int/jobs?experience=0&type=Volunteer"
+      nota: "ONGs humanitárias globais — ACNUR, Oxfam, MSF, etc."
+
+    - portal: Grassroots Volunteering (NGO directory)
+      url: "https://grassrootsvolunteering.org/volunteer_opportunities/"
+      nota: "Curado à mão, zero organizações pagas para listar — alta credibilidade"
+
+    - portal: UN Volunteers (UNV)
+      url: "https://www.unv.org/partner/become-un-volunteer"
+      nota: "Programa ONU — estruturado, requer experiência, mas referência global"
+
+    - portal: NICE Japan (NPO)
+      url: "https://nice1.gr.jp/en/"
+      nota: "PRIORIDADE JAPÃO — rede japonesa de voluntariado internacional, gratuita, sem fins lucrativos"
+
+    - portal: SCI (Service Civil International)
+      url: "https://www.sci.ngo/volunteer/"
+      nota: "Rede histórica de voluntariado (desde 1920), workcamps Europa e Ásia"
+
+    - portal: WWOOF Independents
+      url: "https://www.wwoofindependents.org"
+      nota: "Fazendas WWOOF NÃO oficiais — gratuito, contato directo com fazendeiros"
+
+  europe:
+    - portal: European Solidarity Corps
+      url: "https://youth.europa.eu/solidarity_en"
+      nota: "Programa EU financiado — viagem + alojamento + bolsa. Requer 18-30 anos (verificar elegibilidade)."
+
+    - portal: ECAS (European Citizen Action Service)
+      url: "https://www.ecas.org/volunteering-in-europe/"
+      nota: "Recursos de voluntariado na Europa, links para programas EU"
+
+    - portal: GoAbroad (Europe)
+      url: "https://www.goabroad.com/volunteer-abroad/search/europe/volunteer-abroad-1"
+      nota: "Diretório de programas — alguns gratuitos, outros pagos — filtrar"
+
+  japan:
+    - portal: NICE Japan Workcamps
+      url: "https://nice1.gr.jp/en/programs/"
+      nota: "PRIORIDADE MÁXIMA — workcamps no Japão, gratuitos, experiência cultural profunda"
+
+    - portal: JEN Japan (NPO)
+      url: "https://jen-npo.net/en/"
+      nota: "ONG japonesa — projetos comunitários"
+
+    - portal: Peace Boat
+      url: "https://peaceboat.org/english/volunteer"
+      nota: "Voluntariado a bordo de navio — experiência única, mas diferente do foco"
+
+  southeast_asia:
+    - portal: GoAbroad (Southeast Asia)
+      url: "https://www.goabroad.com/volunteer-abroad/search/southeast-asia/volunteer-abroad-1"
+      nota: "Diretório — filtrar por custo: free/low-cost"
+
+    - portal: Grassroots Volunteering (SEA)
+      url: "https://grassrootsvolunteering.org/volunteer-location/southeast-asia/"
+      nota: "Curado, projetos éticos no SEA"
+
+  balkans_eastern_europe:
+    - portal: SCI Workcamps Europe
+      url: "https://www.sci.ngo/workcamp/search/?country=Bulgaria,Serbia,Bosnia"
+      nota: "Workcamps de curta duração (2-3 semanas) nos Balcãs — gratuitos com acomodação"
+
+    - portal: Alliance of Voluntary Service Organisations
+      url: "https://www.alliance-network.eu/workcamp-database/"
+      nota: "Base de dados de workcamps na Europa, inclui Balcãs"
+
+# ─────────────────────────────────────────────────────────────────
+# PLATAFORMAS PAGAS (não scrapear — acesso manual)
+# ─────────────────────────────────────────────────────────────────
+manual_paid:
+  - "Workaway (~$59/ano) — o utilizador navega e cola URL/texto aqui para análise"
+  - "Worldpackers (~$49/ano) — idem"
+  - "WWOOF por país (~€20-40/país) — WWOOF Italia e WWOOF Japan valem para focos prioritários"
+  - "HelpX ($20/2 anos) — económico, muito conteúdo europeu"
+
+# ─────────────────────────────────────────────────────────────────
+# FACEBOOK — grupos públicos (leitura passiva, NÃO automatizar acções)
+# Ver grupos-facebook.md para lista completa
+# ─────────────────────────────────────────────────────────────────
+facebook_public_groups:
+  nota: "Navegar passivamente com browser. NÃO clicar Join, NÃO postar, NÃO comentar automaticamente."
+  grupos:
+    - name: "Volunteer Abroad For Free"
+      url: "https://www.facebook.com/groups/volunteerabroadforfree/"
+      tipo: global
+    - name: "Work Exchange & Volunteering"
+      url: "https://www.facebook.com/groups/workexchangeandvolunteering/"
+      tipo: global
+    - name: "WWOOF Community"
+      url: "https://www.facebook.com/groups/wwoofcommunity/"
+      tipo: global_farms
+    - name: "Hostel Jobs and Volunteering"
+      url: "https://www.facebook.com/groups/hosteljobsandvolunteering/"
+      tipo: hostels_global
+    - name: "Seasonal Work Europe"
+      url: "https://www.facebook.com/groups/seasonalworkeurope/"
+      tipo: europe_seasonal
+    - name: "Work Exchange Europe"
+      url: "https://www.facebook.com/groups/workexchangeeurope/"
+      tipo: europe
+    - name: "Volunteer in Italy / Volontariato"
+      url: "https://www.facebook.com/groups/volunteeritaly/"
+      tipo: italy
+    - name: "Farm Work and Volunteering Italy"
+      url: "https://www.facebook.com/groups/farmworkitaly/"
+      tipo: italy_farms
+    - name: "Volunteer in Bulgaria"
+      url: "https://www.facebook.com/groups/volunteerbulgaria/"
+      tipo: balkans
+    - name: "Digital Nomads Bulgaria / Bansko"
+      url: "https://www.facebook.com/groups/digitalnomadsbansko/"
+      tipo: balkans_nomads
+    - name: "Seasonal Work Ski Resorts Europe"
+      url: "https://www.facebook.com/groups/skiresortjobseurope/"
+      tipo: ski_season
+    - name: "Volunteer in Japan"
+      url: "https://www.facebook.com/groups/volunteerjapan/"
+      tipo: japan
+    - name: "Volunteer Southeast Asia"
+      url: "https://www.facebook.com/groups/volunteersoutheastasia/"
+      tipo: sea
+    - name: "Work Exchange Thailand"
+      url: "https://www.facebook.com/groups/workexchangethailand/"
+      tipo: thailand
+    - name: "Organic Farming Volunteers Worldwide"
+      url: "https://www.facebook.com/groups/organicfarmingvolunteers/"
+      tipo: farms_global

@@ -1,0 +1,25 @@
+# Personal data — never commit
+profile.md
+data/
+analyses/
+messages/
+
+# Generated output (personal letters, CVs — keep locally only)
+output/*
+# Exception: keep the ownership guide (public document)
+!output/volunteer-agent-ownership-guide.pdf
+!output/volunteer-agent-ownership-guide.html
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright snapshots (local only)
+.playwright-mcp/
+
+# Logs
+*.log

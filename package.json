@@ -1,0 +1,17 @@
+{
+  "name": "volunteer-ops",
+  "version": "1.0.0",
+  "description": "AI-powered volunteer and work exchange search system",
+  "type": "module",
+  "scripts": {
+    "facebook": "node facebook-scan.mjs",
+    "facebook:all": "node facebook-scan.mjs --all",
+    "launch-chrome": "node launch-chrome-facebook.mjs"
+  },
+  "keywords": ["volunteer", "work-exchange", "claude-code", "ai", "travel"],
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.1",
+    "playwright": "^1.58.1"
+  }
+}
