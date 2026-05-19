@@ -1,0 +1,1 @@
+Entra no modo ENRICH. Segue o fluxo completo descrito em `modes/enrich-profile.md`: usa Gmail MCP para rastrear contas em plataformas de voluntariado e redes sociais, faz WebSearch com usernames conhecidos, consolida resultados e apresenta ao utilizador. Só actualiza `profile.md` após confirmação explícita.

@@ -1,0 +1,1 @@
+Entra no modo PIPELINE. Lê `data/pipeline.md` e identifica todos os itens `- [ ]` não processados. Para cada um, faz análise completa seguindo `analisar_oportunidade.md` v4.0. Marca como `- [x]` com o resultado (APROVADA, DESCARTADA, ou UNCLEAR) e o score. Guarda análise completa em `analyses/`. Se veredicto for BOA ou PROMISSORA, guarda mensagem em `messages/`.
